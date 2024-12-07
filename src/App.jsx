@@ -1,24 +1,27 @@
-import './App.css'
-import Menu from './components/Menu'
-import Component from './components/Component'
-import { useState } from 'react'
+import "./App.css";
+import Menu from "./components/Menu";
+import Component from "./components/Component";
+import { useState } from "react";
 
 function App() {
-  const[myText, setMyText] = useState("Tu Nombre");
-  const[myValue, setMyValue] = useState("asdf");
-  const handleInput = (e) =>{
-    console.log(e.target.value);
-    setMyValue(e.target.value)
-  }
+  const condicion = false;
+
   return (
     <>
       <div>
-        <h1>Hola a todos</h1>
-        <h2>{myValue}</h2>
-        <input type='text' placeholder={myText} value={myValue} onChange={handleInput} />
+        <h1>Renderizado condicional</h1>
+        {condicion && <h2>La condición se cumple</h2>}
+
+        {!condicion && <h2>La condición no se cumple</h2>}
+
+        {/* {condicion ? (
+          <h2>La condición se cumple</h2>
+        ) : (
+          <h2>La condición no se cumple</h2>
+        )}  */}
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
